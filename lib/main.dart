@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quizzler/question.dart';
+
+import 'question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -36,18 +39,28 @@ class _QuizPageState extends State<QuizPage> {
     ),
   ];
 
-  List<String> questions = [
+  /*List<String> questions = [
     'Une vache peut-elle descendre des marches mais pas les monter.',
     'À peu près un quart des os d\'un humain se trouve dans les pieds.',
     'Le sang d\'une limace est vert.'
   ];
 
-  List<bool> answers = [false, true, true];
+  List<bool> answers = [false, true, true];*/
+
+  List<Question> questions = [
+    Question(
+        q: 'Une vache peut-elle descendre des marches mais pas les monter.',
+        a: false),
+    Question(
+        q: 'À peu près un quart des os d\'un humain se trouve dans les pieds.',
+        a: true),
+    Question(q: 'Le sang d\'une limace est vert.', a: true)
+  ];
 
   int questionNumber = 0;
 
   void increaseQuestion(bool answer) {
-    bool correctAnswer = answers[questionNumber];
+    bool correctAnswer = questions[questionNumber].questionAnswer;
     if (answer == correctAnswer) {
       print('Bonne réponse!');
     } else {
@@ -70,7 +83,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNumber],
+                questions[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -126,9 +139,3 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
-
-/*
-question1: 'Une vache peut descendre des marches mais pas les monter.', false,
-question2: 'À peu près un quart des os d'\un humain se trouve dans les pieds.', true,
-question3: 'Le sang d\'une limace est vert.', true,
-*/
