@@ -54,7 +54,7 @@ class _QuizPageState extends State<QuizPage> {
               textColor: Colors.white,
               color: Colors.green,
               child: Text(
-                'True',
+                'Vrai',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
@@ -72,7 +72,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.red,
               child: Text(
-                'False',
+                'Faux',
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.white,
@@ -91,7 +91,7 @@ class _QuizPageState extends State<QuizPage> {
 }
 
 /*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
+question1: 'Une vache peut descendre des marches mais pas les monter.', false,
+question2: 'À peu près un quart des os d'\un humain se trouve dans les pieds.', true,
+question3: 'Le sang d\'une limace est vert.', true,
 */
