@@ -39,14 +39,6 @@ class _QuizPageState extends State<QuizPage> {
     ),
   ];
 
-  /*List<String> questions = [
-    'Une vache peut-elle descendre des marches mais pas les monter.',
-    'À peu près un quart des os d\'un humain se trouve dans les pieds.',
-    'Le sang d\'une limace est vert.'
-  ];
-
-  List<bool> answers = [false, true, true];*/
-
   List<Question> questions = [
     Question(
         q: 'Une vache peut-elle descendre des marches mais pas les monter.',
@@ -54,7 +46,7 @@ class _QuizPageState extends State<QuizPage> {
     Question(
         q: 'À peu près un quart des os d\'un humain se trouve dans les pieds.',
         a: true),
-    Question(q: 'Le sang d\'une limace est vert.', a: true)
+    Question(q: 'Le sang d\'une limace est vert.', a: true),
   ];
 
   int questionNumber = 0;
