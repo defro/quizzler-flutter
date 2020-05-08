@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quizzler/question.dart';
 
-import 'question.dart';
+import 'quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -39,20 +40,10 @@ class _QuizPageState extends State<QuizPage> {
     ),
   ];
 
-  List<Question> questions = [
-    Question(
-        q: 'Une vache peut-elle descendre des marches mais pas les monter.',
-        a: false),
-    Question(
-        q: 'À peu près un quart des os d\'un humain se trouve dans les pieds.',
-        a: true),
-    Question(q: 'Le sang d\'une limace est vert.', a: true),
-  ];
-
   int questionNumber = 0;
 
   void increaseQuestion(bool answer) {
-    bool correctAnswer = questions[questionNumber].questionAnswer;
+    bool correctAnswer = quizBrain.questions[questionNumber].questionAnswer;
     if (answer == correctAnswer) {
       print('Bonne réponse!');
     } else {
@@ -75,7 +66,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNumber].questionText,
+                quizBrain.questions[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
