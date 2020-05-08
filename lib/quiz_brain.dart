@@ -1,6 +1,8 @@
 import 'question.dart';
 
 class QuizBrain {
+  int _questionNumber = 0;
+
   List<Question> _questions = [
     Question('Une vache peut-elle descendre des marches mais pas les monter.',
         false),
@@ -27,11 +29,17 @@ class QuizBrain {
         true),
   ];
 
-  String getQuestionText(int questionNumber) {
-    return _questions[questionNumber].questionText;
+  void nextQuestion() {
+    if (_questionNumber < _questions.length - 1) {
+      _questionNumber++;
+    }
   }
 
-  bool getAnswer(int questionNumber) {
-    return _questions[questionNumber].questionAnswer;
+  String getQuestionText() {
+    return _questions[_questionNumber].questionText;
+  }
+
+  bool getAnswer() {
+    return _questions[_questionNumber].questionAnswer;
   }
 }
