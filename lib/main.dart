@@ -42,9 +42,17 @@ class _QuizPageState extends State<QuizPage> {
     'Le sang d\'une limace est vert.'
   ];
 
+  List<bool> answers = [false, true, true];
+
   int questionNumber = 0;
 
-  void increaseQuestion() {
+  void increaseQuestion(bool answer) {
+    bool correctAnswer = answers[questionNumber];
+    if (answer == correctAnswer) {
+      print('Bonne réponse!');
+    } else {
+      print('Mauvaise réponse!');
+    }
     setState(() {
       questionNumber++;
     });
@@ -87,7 +95,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                increaseQuestion();
+                increaseQuestion(true);
               },
             ),
           ),
@@ -106,7 +114,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
-                increaseQuestion();
+                increaseQuestion(false);
               },
             ),
           ),
