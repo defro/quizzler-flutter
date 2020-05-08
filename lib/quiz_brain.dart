@@ -1,7 +1,7 @@
 import 'question.dart';
 
 class QuizBrain {
-  List<Question> questions = [
+  List<Question> _questions = [
     Question('Une vache peut-elle descendre des marches mais pas les monter.',
         false),
     Question(
@@ -26,4 +26,12 @@ class QuizBrain {
         'Dans l\'état de Viginie aux États-Unis, si vous heurtez accidentiellement un animal avec votre voiture, vous avez le droit de le ramener à la maison pour le manger.',
         true),
   ];
+
+  String getQuestionText(int questionNumber) {
+    return _questions[questionNumber].questionText;
+  }
+
+  bool getAnswer(int questionNumber) {
+    return _questions[questionNumber].questionAnswer;
+  }
 }
