@@ -42,7 +42,13 @@ class _QuizPageState extends State<QuizPage> {
     'Le sang d\'une limace est vert.'
   ];
 
-  int questionNumber = 1;
+  int questionNumber = 0;
+
+  void increaseQuestion() {
+    setState(() {
+      questionNumber++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +87,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                increaseQuestion();
               },
             ),
           ),
@@ -99,6 +106,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                increaseQuestion();
               },
             ),
           ),
